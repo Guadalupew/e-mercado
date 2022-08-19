@@ -188,3 +188,67 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Raleway; 
+}
+
+.login {
+  width: 500px;
+  height: 450px;
+  background-color:darkgrey;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 5px 10px 37px #000;
+  padding: 20px 30px;
+  border-top: 4px solid #000;
+}
+
+.login h5 {
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  font-size: 30px;
+}
+
+.campos {
+  width: 100%;
+  border:1px solid #000;
+  margin-bottom: 15px;
+  padding: 10px 30px;
+  background-color: lightgrey;
+  font-size: 14px;
+  font-weight: bold;
+
+
+}
+
+.login p {
+  height: 40px;
+  font-size: 15px;
+  text-align: center;
+  padding: 20px 30px;
+  
+}
+
+.buttom {
+  width: 100%;
+  height: 40px;
+  background-color:steelblue; 
+  border: none
+
+}
+.imagen {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 10px;
+  height: 350px;
+  
+
+}
