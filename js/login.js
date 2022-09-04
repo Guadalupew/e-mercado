@@ -8,8 +8,11 @@ function ingresar(){
     if (usuario.value === '' || contrasenia.value === '') {
       error.innerHTML = 'Ingresa tu usuario y contraseña.';
     } else {
+      localStorage.setItem("Usuario", nombre.value)
     window.location.href = "login.html" 
     }
    
 }
+
+
 
