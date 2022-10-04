@@ -42,6 +42,6 @@ let getJSONData = function(url){
 
 document.addEventListener("DOMContentLoaded", function(){
   let Usuario = localStorage.getItem("Usuario")
-  document.getElementById("Nombre").innerHTML = Usuario;
+  document.getElementById("dropdownMenuButton1").innerHTML = Usuario;
 })
 

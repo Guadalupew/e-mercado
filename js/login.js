@@ -14,5 +14,10 @@ function ingresar(){
    
 }
 
+function cerrarSesion(){
+  localStorage.setItem("Usuario", null)
+    window.location.href = "index.html" 
+}
+
 
 

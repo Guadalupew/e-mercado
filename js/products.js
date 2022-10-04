@@ -6,6 +6,8 @@ let currentSortCriteria = undefined;
 let minCost = undefined;
 let maxCost = undefined;
 
+//Se establecen los criterios para ordenar los productos
+
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_COST)
@@ -97,6 +99,7 @@ function showProductsList(){
     }
 }
 
+//Se ordena y muestran los productos según el criterio elegido.
     function sortAndShowProducts(sortCriteria, productsArray){
         currentSortCriteria = sortCriteria;
     
@@ -113,6 +116,7 @@ function showProductsList(){
     document.getElementById("rangeFilterCost").addEventListener("click", function(){
         //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
         //de productos por categoría.
+
         minCost = document.getElementById("rangeFilterCostMin").value;
         maxCost = document.getElementById("rangeFilterCostMax").value;
 
@@ -142,4 +146,9 @@ function showProductsList(){
     
         showProductsList();
     });
-    
+
+    //Guardar el ID del producto en el local Storage
+    function setCatID(id){
+        localStorage.setItem("productID", id);
+        window.location = "product-info.html";
+    }
