@@ -31,7 +31,8 @@
           </li>
           <li class="nav-item">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown button
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -47,9 +48,54 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div>
+        <h3 class="text-center">Carrito de compras</h3>
+        <br />
+        <h4> Artículos a comprar </h4>
       </div>
+      <div>
+        <table id="articulos" style="width:100%; border:solid;">
+          <tr>
+            <th style="border:solid;"></th>
+            <th style="border:solid;">Nombre</th>
+            <th style="border:solid;">Costo</th>
+            <th style="border:solid;">Cantidad</th>
+            <th style="border:solid;">Subtotal</th>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <div>
+        <h4>Tipo de envío</h4>
+
+        <form>
+          <input type="radio" id="premium" name="radio" value="15">
+          <label for="premium">Premium 2 a 5 días (15%)</label><br>
+          <input type="radio" id="express" name="radio" value="7">
+          <label for="express">Express 5 a 8 días (7%)</label><br>
+          <input type="radio" id="standard" name="radio" value="5">
+          <label for="standard">Standard 12 a 15 días (5%)</label>
+        </form>
+      </div>
+      <br />
+      <div>
+        <h4>Dirección de envío</h4>
+        <form>
+            <div>
+            <label style="display:block;" for="calle"> Calle</label>
+            <input style="display:block;" type="text" id="calle">
+          </div>
+            <div>
+            <label style="display:block;" for="numero">Número</label>
+            <input style="display:block;" type="text" id="numero">
+          </div>
+            <div>
+            <label style="display:block;" for="esquina">Esquina</label>
+            <input style="display:block;" type="text" id="esquina">
+          </div>
+        </form>
+      </div>
+
     </div>
   </main>
   <footer class="text-muted">
