@@ -65,38 +65,152 @@
         </table>
       </div>
       <br />
+      <!-- //Se agregan controles gráficos para el Envío.  -->
       <div>
         <h4>Tipo de envío</h4>
 
         <form>
-          <input type="radio" id="premium" name="radio" value="15">
+          <input type="radio" id="premium" name="radio" value="15" checked onchange="actualizarCostos()">
           <label for="premium">Premium 2 a 5 días (15%)</label><br>
-          <input type="radio" id="express" name="radio" value="7">
+          <input type="radio" id="express" name="radio" value="7" onchange="actualizarCostos()">
           <label for="express">Express 5 a 8 días (7%)</label><br>
-          <input type="radio" id="standard" name="radio" value="5">
+          <input type="radio" id="standard" name="radio" value="5" onchange="actualizarCostos()">
           <label for="standard">Standard 12 a 15 días (5%)</label>
         </form>
       </div>
       <br />
       <div>
         <h4>Dirección de envío</h4>
-        <form>
-            <div>
+        <form action="#" id="formulario" method="get" class="row mt-4 was-validated" novalidate>
+          <div>
             <label style="display:block;" for="calle"> Calle</label>
-            <input style="display:block;" type="text" id="calle">
+            <input style="display:block;" type="text" id="calle" required >
+            <div class="invalid-feedback">
+              Ingresar una calle
+            </div>
           </div>
-            <div>
+          <div>
             <label style="display:block;" for="numero">Número</label>
-            <input style="display:block;" type="text" id="numero">
+            <input style="display:block;" type="text" id="numero" required >
+            <div class="invalid-feedback">
+              Ingresar un número
+            </div>
           </div>
-            <div>
+          <div>
             <label style="display:block;" for="esquina">Esquina</label>
-            <input style="display:block;" type="text" id="esquina">
+            <input style="display:block;" type="text" id="esquina" required >
+            <div class="invalid-feedback">
+              Ingresar una esquina
+            </div>
           </div>
         </form>
       </div>
+      <br />
+      <div>
+        <h4>Costos</h4>
+        <ul class="list-group" style="width:70%;">
+          <li class="list-group-item">
+            <div>
+              <span> Subtotal</span>
+              <span style="float:right;" id="suma-subtotales"></span>
+            </div>
+            <div>
+              <small>Costo unitario del producto por cantidad</small>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div>
+              <span> Costo de envío </span>
+              <span style="float:right;" id="costo-envío"></span>
+            </div>
+            <div>
+              <small>Según el tipo de envío</small>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <span> Total ($) </span>
+            <span style="float:right;" id="total"></span>
+          </li>
+        </ul>
+      </div>
+      <br>
+      <div>
+        <h4>Forma de pago</h4>
+      </div>
+      <div>
+      <!-- Button trigger modal -->
+<button type="button" id="seleccionar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Seleccionar
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form class="needs-validation" novalidate>
+        <div class="container-fluid">
+          <div class="credito custom-radio ">
+            <input id="tarjetaDeCredito" name="tarjeta" type="radio" class="credito-input">
+               <label class="credito-label my-1" for="tarjetaDeCredito">
+               <span class="tarjetaDeCredito">Tarjeta de credito</span></label>
+          </div>
+        
+      <hr>
+          <div class="row">
+
+            <div class="col-6">
+              <div class="row">
+                <div class="col-12">Número de tarjeta</div>
+                 <div class="col-12"><input class="form-control" id="numeroTarjeta" type="number" min="0" class="rounded py-1" style="width: 100%;" required> </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="row">
+                <div class="col-12">Código de Seg.</div>
+                 <div class="col-12"><input class="form-control" id="codigoDeSeg" type="number" min="0" style="width: 60%;" class="rounded py-1" required></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row py-3">
+            <div class="col-6">
+              <div class="col-12">Vencimiento</div>
+               <div class="col-12"><input class="form-control" id="vencimiento" type="date" min="0" class="rounded py-1" style="width: 100%;" required></div>
+            </div>
+          </div>
+          <div class="credito custom-radio pt-4">
+            <input id="transfBancaria" name="tarjeta" type="radio" class="credito-input">
+            <label class="credito-label my-1" for="transfBancaria">
+              <label class="custom-control-label" for="transfBancaria">Transferencia bancaria</label>
+          </div>
+     
+
+          <hr>
+
+          <div class="row pb-3">
+            <div class="col-6">
+              <div class="col-12">Número de cuenta</div>
+                <div class="col-12"><input class="form-control" id="numDeCuenta" type="number" min="0" class="rounded py-1" style="width: 100%;" required></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Finalizar Compra</button>
+      </div>
+    </form>
     </div>
+  </div>
+</div> 
   </main>
   <footer class="text-muted">
     <div class="container">
